@@ -1,46 +1,23 @@
 from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
+from django.contrib.auth.models import BaseUserManager
+
 
 """ Importe BaseUserManager per a poder treballar com administrador: """
-from django.contrib.auth.models import BaseUserManager
+
 # Create your models here.
 
-""" Classe d'usuari standard: """
-class Account(AbstractBaseUser):
-    email = models.EmailField(unique=True)
-    username = models.CharField(max_length=40, unique=True)
-
-    first_name = models.CharField(max_length=40, blank=True)
-    last_name = models.CharField(max_length=40, blank=True)
-    tagline = models.CharField(max_length=140, blank=True)
-
-    is_admin = models.BooleanField(defaul=False)
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    objects = AccountManager()
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
-
-    def __unicode__(self):
-        return self.email
-
-    def get_full_name(self):
-        return ' '.join([self.first_name, self.last_name])
-
-    def get_short_name(self):
-        return self.first_name
 
 """ Classe Administrador: """
+
+
 class AccountManager(BaseUserManager):
     def create_user(self, email, password=None, **kwargs):
         if not email:
-            raise ValueError('Els usuaris tenen requerit un email vàlid.')
+            raise ValueError('Els usuaris tenen requerit un email valid.')
 
         if not kwargs.get('username'):
-            raise ValueError('Els usuaris deuen tenir un username vàlid')
+            raise ValueError('Els usuaris deuen tenir un username valid')
 
         account = self.model(
             email=self.normalize_email(email), username=kwargs.get('username')
@@ -58,3 +35,32 @@ class AccountManager(BaseUserManager):
         account.save()
 
         return account
+
+
+""" Classe d'usuari standard: """
+
+
+class Account(AbstractBaseUser):
+    email = models.EmailField(unique=True)
+    username = models.CharField(max_length=40, unique=True)
+    first_name = models.CharField(max_length=40, blank=True)
+    last_name = models.CharField(max_length=40, blank=True)
+    tagline = models.CharField(max_length=140, blank=True)
+    is_admin = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    objects = AccountManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+    def __unicode__(self):
+        return self.email
+
+    def get_full_name(self):
+        return ' '.join([self.first_name, self.last_name])
+
+    def get_short_name(self):
+        return self.first_name
+
