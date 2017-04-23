@@ -1,11 +1,7 @@
 from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
 from django.contrib.auth.models import BaseUserManager
-
-
-""" Importe BaseUserManager per a poder treballar com administrador: """
-
-# Create your models here.
+""" Importe BaseUserManager per a poder treballar com administrador """
 
 
 """ Classe Administrador: """
