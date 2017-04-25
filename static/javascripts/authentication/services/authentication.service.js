@@ -92,7 +92,24 @@
         username: username,
         password: password,
         email: email
-      });
+      }).then(registerSuccessFn, registerErrorFn);
+    }
+
+    /**
+    * @name registerSuccessFn
+    * @desc Fa login del nou usuari
+    */
+    function registerSuccessFn(data, status, headers, config){
+      Authentication(email, password);
+    }
+
+
+    /**
+    * @nameregisterErrorFn
+    * @desc Escriu un log "Error epic!" a la consola
+    */
+    function registerErrorFn(data, status, headers, config) {
+      console.error('Error epic!');
     }
 
     /**

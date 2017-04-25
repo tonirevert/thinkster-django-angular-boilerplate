@@ -19,6 +19,20 @@
 
     vm.register = register;
 
+    activate();
+
+    /**
+    * @name activate
+    * @desc Accions a realitzar quan aquest controller és inicialitzat
+    * @memberOf thinkster.authentication.controllers.RegisterController
+    */
+    function activate() {
+      // Si l'usuari ja ha accedit no deu estar ací i és redirigit a l'arrel
+      if (Authentication.isAuthenticated()) {
+        $location.url('/');
+      }
+    }
+
     /**
     * @name register
     * @desc Register a new user
