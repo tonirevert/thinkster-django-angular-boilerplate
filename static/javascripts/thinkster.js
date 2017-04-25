@@ -2,14 +2,15 @@
   'use strict';
 
   angular
-    .module('thinkster.config', []);
-
-  angular
     .module('thinkster', [
       'thinkster.routes',
       'thinkster.authentication',
-      'thinkster.config'
+      'thinkster.config',
+      'thinkster.layout'
     ]);
+
+  angular
+    .module('thinkster.config', []);
 
   angular
     .module('thinkster.routes', ['ngRoute']);

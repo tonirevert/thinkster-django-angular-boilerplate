@@ -24,6 +24,7 @@
       getAuthenticatedAccount: getAuthenticatedAccount,
       isAuthenticated: isAuthenticated,
       login: login,
+      logout: logout,
       register: register,
       setAuthenticatedAccount: setAuthenticatedAccount,
       unauthenticate: unauthenticate
@@ -93,23 +94,25 @@
         password: password,
         email: email
       }).then(registerSuccessFn, registerErrorFn);
-    }
-
-    /**
-    * @name registerSuccessFn
-    * @desc Fa login del nou usuari
-    */
-    function registerSuccessFn(data, status, headers, config){
-      Authentication(email, password);
-    }
 
 
-    /**
-    * @nameregisterErrorFn
-    * @desc Escriu un log "Error epic!" a la consola
-    */
-    function registerErrorFn(data, status, headers, config) {
-      console.error('Error epic!');
+      /**
+      * @name registerSuccessFn
+      * @desc Fa login del nou usuari
+      */
+      function registerSuccessFn(data, status, headers, config){
+        Authentication.login(email, password);
+      }
+
+
+      /**
+      * @name registerErrorFn
+      * @desc Escriu un log "Error epic!" a la consola
+      */
+      function registerErrorFn(data, status, headers, config) {
+        console.error('Error epic!');
+      }
+
     }
 
     /**
@@ -121,10 +124,58 @@
      * @memberOf thinkster.authentication.services.Authentication
      */
     function login(email, password) {
+
       return $http.post('/api/v1/auth/login/', {
         email: email,
         password: password
-      });
+      }).then(loginSuccessFn, loginErrorFn);
+
+      /**
+       * @name loginSuccessFn
+       * @desc Guarda el compte a cookie i redirecciona al index
+       */
+      function loginSuccessFn(data, status, headers, config) {
+        Authentication.setAuthenticatedAccount(data.data);
+
+        window.location = '/';
+      }
+
+      /**
+       * @name loginErrorFn
+       * @desc Escriu un log "Error epic!" a la consola
+       */
+      function loginErrorFn(data, status, headers, config) {
+        console.error('Error epic!');
+      }
+    }
+
+    /**
+    * @name logout
+    * @desc Intena fer un logout de l'usuari
+    * @returns {Promise}
+    * @memberOf thinkster.authentication.services.Authentication
+    */
+    function logout() {
+      return $http.post('/api/v1/auth/logout/')
+        .then(logoutSuccessFn, logoutErrorFn);
+
+      /**
+       * @name logoutSuccessFn
+       * @desc Unautentica i redirecciona al index amb un reload
+       */
+      function logoutSuccessFn(data, status, headers, config) {
+        Authentication.unauthenticate();
+
+        window.location = '/';
+      }
+
+      /**
+       * @name logoutErrorFn
+       * @desc Escriu un log "Error epic!" a la consola
+       */
+      function logoutErrorFn(data, status, headers, config) {
+        console.error('Error epic!');
+      }
     }
   }
 })();
