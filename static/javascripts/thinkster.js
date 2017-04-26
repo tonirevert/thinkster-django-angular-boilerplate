@@ -6,7 +6,8 @@
       'thinkster.routes',
       'thinkster.authentication',
       'thinkster.config',
-      'thinkster.layout'
+      'thinkster.layout',
+      'thinkster.posts'
     ]);
 
   angular
