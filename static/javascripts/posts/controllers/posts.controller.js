@@ -1,5 +1,5 @@
 /**
-* PostController
+* PostsController
 * @namespace thinkster.posts.controllers
 */
 (function () {
@@ -17,7 +17,7 @@
 	function PostsController($scope) {
 		var vm = this;
 
-		vm.colums = [];
+		vm.columns = [];
 
 		activate();
 
@@ -30,7 +30,7 @@
 			$scope.$watchCollection(function () {
 				return $scope.posts;
 			}, render);
-			$scope.watch(function () {
+			$scope.$watch(function () {
 				return $(window).width();
 			}, render);
 		}

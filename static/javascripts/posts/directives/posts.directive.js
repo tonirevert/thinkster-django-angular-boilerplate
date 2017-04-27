@@ -19,7 +19,7 @@
 		* @memberOf thinkster.posts.directives.Posts
 		*/
 		var directive = {
-			controller: 'PostController',
+			controller: 'PostsController',
 			controllerAs: 'vm',
 			restrict: 'E',//Per a restringir a l'element <posts></posts>
 			scope: {

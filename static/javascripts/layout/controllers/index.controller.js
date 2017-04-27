@@ -42,7 +42,7 @@
 			* @name postSuccessFn
 			* @desc Actualitza el array de la vista
 			*/
-			function postSuccessFn(data, status, headers, config) {
+			function postsSuccessFn(data, status, headers, config) {
 				vm.posts = data.data;
 			}
 
