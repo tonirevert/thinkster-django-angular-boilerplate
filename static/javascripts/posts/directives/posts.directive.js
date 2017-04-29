@@ -21,7 +21,7 @@
 		var directive = {
 			controller: 'PostsController',
 			controllerAs: 'vm',
-			restrict: 'E',//Per a restringir a l'element <posts></posts>
+			restrict: 'E',/*Per a restringir a l'element <posts></posts>*/
 			scope: {
 				posts: '='
 			},

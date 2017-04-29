@@ -31,7 +31,7 @@
 			Posts.all().then(postsSuccessFn, postsErrorFn);
 
 			$scope.$on('post.created', function (event, post) {
-				vm.posts.shift(post);
+				vm.posts.unshift(post);
 			});
 
 			$scope.$on('post.created.error', function () {
@@ -47,7 +47,7 @@
 			}
 
 			/**
-			* @name ostsErrorFn
+			* @name postsErrorFn
 			* @desc Mostra un snackbar amb error
 			*/
 			function postsErrorFn(data, status, headers, config) {
