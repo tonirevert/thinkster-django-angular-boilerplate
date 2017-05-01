@@ -8,7 +8,8 @@
       'thinkster.config',
       'thinkster.layout',
       'thinkster.posts',
-      'thinkster.utils'
+      'thinkster.utils',
+      'thikster.profiles'
     ]);
 
   angular
