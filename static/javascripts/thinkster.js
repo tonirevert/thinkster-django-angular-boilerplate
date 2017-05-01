@@ -20,8 +20,8 @@
 
   /*Codi per a donar suport al CSRF token de django:*/
   angular
-  .module('thinkster')
-  .run(run);
+    .module('thinkster')
+    .run(run);
 
   run.$inject = ['$http'];
 

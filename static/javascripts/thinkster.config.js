@@ -9,7 +9,7 @@
 
     /**
     * @name config
-    * @desc Enable HTML5 routing
+    * @desc Habilita el routing amb HTML5
     */
     function config($locationProvider) {
       $locationProvider.html5Mode(true);

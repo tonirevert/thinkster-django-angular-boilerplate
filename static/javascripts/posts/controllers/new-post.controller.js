@@ -46,7 +46,7 @@
 
             /**
             * @name createPostErrorFn
-            * @desc Propaga el event d'error i mostra un snackbar amb missatge d'error
+            * @desc Propaga l'event d'error i mostra un snackbar amb missatge d'error
             */
             function createPostErrorFn(data, status, headers, config) {
                 $rootScope.$broadcast('post.created.error');

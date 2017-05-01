@@ -9,7 +9,7 @@
 
   /**
   * @name config
-  * @desc Define valid application routes
+  * @desc Defineix les rutes de l'aplicació
   */
   function config($routeProvider) {
     $routeProvider.when('/register', {
