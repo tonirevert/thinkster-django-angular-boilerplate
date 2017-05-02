@@ -47,6 +47,7 @@
             */
             function profileErrorFn(data, status, headers, config) {
                 $location.url('/');
+                console.log('profileErrorFn a profile.controller.js');
                 Snackbar.error('Eixe usuari no existeix.');
             }
 
