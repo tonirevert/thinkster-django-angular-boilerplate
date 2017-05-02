@@ -4,12 +4,12 @@
     angular
       .module('thinkster.profiles', [
         'thinkster.profiles.controllers',
-        'thikster.profiles.services'
+        'thinkster.profiles.services'
       ]);
 
       angular
-        .module('thikster.profiles.controllers', []);
+        .module('thinkster.profiles.controllers', []);
 
       angular
-        .module('thikster.profiles.services', []);
+        .module('thinkster.profiles.services', []);
 })();

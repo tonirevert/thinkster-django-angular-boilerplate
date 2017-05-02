@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-      .module('thikster.profiles.services')
+      .module('thinkster.profiles.services')
       .factory('Profile', Profile);
 
     Profile.$inject = ['$http'];
@@ -20,7 +20,7 @@
       * @desc La factoria a tornar
       * @memberOf thinkster.profiles.services.Profile
       */
-      val Profile = {
+      var Profile = {
         destroy: destroy,
         get: get,
         update: update

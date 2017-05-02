@@ -9,7 +9,7 @@
       'thinkster.layout',
       'thinkster.posts',
       'thinkster.utils',
-      'thikster.profiles'
+      'thinkster.profiles'
     ]);
 
   angular
