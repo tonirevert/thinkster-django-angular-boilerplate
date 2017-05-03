@@ -9,13 +9,13 @@
     .module('thinkster.authentication.services')
     .factory('Authentication', Authentication);
 
-  Authentication.$inject = ['$cookies', '$http'];
+  Authentication.$inject = ['$cookies', '$http', 'Snackbar'];
 
   /**
   * @namespace Authentication
   * @returns {Factory}
   */
-  function Authentication($cookies, $http) {
+  function Authentication($cookies, $http, Snackbar) {
     /**
     * @name Authentication
     * @desc La Factoria a tornar
@@ -145,6 +145,7 @@
        * @desc Escriu un log "Error epic!" a la consola
        */
       function loginErrorFn(data, status, headers, config) {
+        Snackbar.error('usuari o password incorrecte!');
         console.error('Error epic!');
       }
     }
