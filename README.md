@@ -17,3 +17,5 @@
 * `$ python manage.py migrate`
 * `$ python manage.py runserver`
 
+* Per a fer us del codi sass cal llançar aquest comando:
+sass --watch styles.scss:styles.css

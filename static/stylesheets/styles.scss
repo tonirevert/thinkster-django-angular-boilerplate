@@ -1,0 +1,72 @@
+$primary-color-dark:   #E64A19;
+$primary-color:        #FF5722;
+$primary-color-light:  #FFCCBC;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FF9800;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: table;
+  width: 100%;
+}
+
+.page-row {
+  display: table-row;
+  height: 1px;
+}
+
+.page-row-expanded {
+  height: 100%;
+}
+
+.navbar {
+  background-color: $primary-color-dark;
+}
+
+.navbar-brand {
+  width: 81px;
+}
+
+footer {
+  height: 150px;
+  color: $primary-color-text;
+  background-color: $secondary-text-color;
+}
+
+footer a {
+  color: $accent-color;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+.no-posts-here {
+  text-align: center;
+}
+
+.post {}
+
+.post .post__meta {
+  font-weight: bold;
+  text-align: right;
+  padding-bottom: 19px;
+}
+
+.post .post__meta a:hover {
+  text-decoration: none;
+}
+
+.btn-add-new-post {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+}
