@@ -63,10 +63,23 @@ WSGI_APPLICATION = 'thinkster_django_angular_boilerplate.wsgi.application'
 import dj_database_url
 
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': 'django',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
+"""
+DATABASES = {
     'default': dj_database_url.config(
         default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
     )
 }
+"""
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
