@@ -28,11 +28,49 @@ body {
 }
 
 .navbar {
-  background-color: $primary-color-dark;
+  background-color: $primary-color;
 }
 
 .navbar-brand {
   width: 81px;
+}
+
+video#video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(../images/static.jpg) no-repeat;
+    background-size: cover;
+}
+
+video {
+    object-fit: contain;
+}
+
+.search {
+  text-align: center;
+}
+
+.search-box {
+  border-radius: 4px;
+  border: 1px solid;
+  height: 35px;
+  width: 30%;
+  color: $primary-color-text;
+  background-color: $secondary-text-color;
+}
+
+#searchButton {
+  background-color: $primary-color;
 }
 
 footer {
@@ -43,6 +81,22 @@ footer {
 
 footer a {
   color: $accent-color;
+}
+
+#mail {
+  width: 200px;
+  background-color: $primary-color-text;
+}
+
+#nav-options {
+  color: $primary-color-text;
+  padding: 18px;
+
+}
+
+#nav-options:hover{
+  background-color: $primary-color-dark;
+  text-decoration: none;
 }
 
 .footer-copyright {

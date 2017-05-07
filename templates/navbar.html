@@ -12,6 +12,8 @@
     </div> <!-- ./navbar-header -->
 
     <div class="collapse navbar-collapse" id="not-google-plus-nav">
+      <a class="nav navbar-nav" id="nav-options" href="#">TÈCNICS</a>
+      <a class="nav navbar-nav" id="nav-options" href="/opinion">OPINIONS</a>
       <ul class="nav navbar-nav pull-right">
         {% if user.is_authenticated %}
           <li><a href="/+{{ user.username }}">+{{ user.username }}</a></li>

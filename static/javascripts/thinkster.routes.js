@@ -12,7 +12,11 @@
   * @desc Defineix les rutes de l'aplicació
   */
   function config($routeProvider) {
-    $routeProvider.when('/register', {
+    $routeProvider.when('/opinion', {
+      controller: 'OpinionController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/layout/index.html'
+    }).when('/register', {
       controller: 'RegisterController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/authentication/register.html'
@@ -31,7 +35,7 @@
     }).when('/', {
       controller: 'IndexController',
       controllerAs: 'vm',
-      templateUrl: '/static/templates/layout/index.html'
+      templateUrl: '/static/templates/layout/index2.html'
     }).otherwise('/');
   }
 })();
