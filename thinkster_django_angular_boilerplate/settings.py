@@ -20,7 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '$6(x*g_2g9l_*g8peb-@anl5^*8q!1w)k&e&2!i)t6$s8kia94'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Canviar a (DEBUG = False) false per a desplegar al VPS
 DEBUG = os.environ.get('DEBUG', True)
+# DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -99,7 +101,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Canviar a la segona linia (STATIC_ROOT = '/opt/statics/rot') per a desplegar al VPS:
 STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = '/opt/statics/rot'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -127,6 +132,8 @@ REST_FRAMEWORK = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
+# Canviar a la segona linia (ALLOWED_HOSTS = ['127.0.0.1']) per a desplegar al VPS:
 ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 AUTH_USER_MODEL = 'authentication.Account'

@@ -21,3 +21,11 @@
 
 * Per a fer us del codi sass cal llançar aquest comando:
 sass --watch styles.scss:styles.css
+
+## Desplegament a un VPS
+
+## A banda de fer els passos anteriors cal fer uns canvits per a que el projecte funcione:
+
+He fet servir [aquest tutorial](https://pythoniza.me/deploy-de-proyectos-django-en-vps-con-linux-ubuntudebian/) per al depslegament al VPS:
+
+* Cal modificar la primera linia de manage.py del projecte: $`#!/usr/bin/env python` amb la ruta al fitxer python de l'entorn virtual que tenim per al projecte
