@@ -18,8 +18,13 @@ sudo apt-get install -y python python-setuptools python-dev && sudo easy_install
 sudo apt-get install -y libxml2-dev libxslt-dev  # needed for Python package 'lxml'
 sudo apt-get install -y libmysqlclient-dev build-essential #needed for MySQL client
 
+# NodeJS installation
+sudo apt-get install -y npm nodejs-legacy
+
 # virtualenv, virtualenvwrapper stuff
 sudo pip install virtualenv virtualenvwrapper
+sudo pip install uwsgi
+
 echo "
 if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
   . /usr/local/bin/virtualenvwrapper.sh
